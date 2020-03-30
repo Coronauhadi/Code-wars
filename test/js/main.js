@@ -1,9 +1,3 @@
-<template>
-div
-
-</template>
-
-
 
 
 var app = new Vue({
