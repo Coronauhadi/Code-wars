@@ -37,6 +37,7 @@ var app = new Vue({
       this.pers.pos.left = cor.left+'px'
     },
     "addshg": function() {
+		this.rotate('l')
       if(this.pers.direction == 0){
 		  this.pers.cor.y++
 	  }
@@ -57,7 +58,7 @@ var app = new Vue({
     },
 	"rotate": function(dir){
 		if(dir == 'left' || dir == 'l'){
-			this.pers.direction = Math.abs((this.pers.direction -1) % 4)
+			this.pers.direction = (this.pers.direction == 0)? 3 : (this.pers.direction-1) % 4
 		}
 		else if(dir == 'right' || dir == 'r'){
 			this.pers.direction = Math.abs((this.pers.direction +1) % 4)
@@ -72,7 +73,7 @@ var app = new Vue({
     windowWidth: window.innerWidth,
     pers: {
       animated: ["anim"],
-      cor:{'x': 1, 'y': 1},
+      cor:{'x': 5, 'y': 5},
       pos: {"top": "1px", "left":"1px", "transform": "rotate(0 deg)",},
 	  /*
 	  direction = 0 -> look right
