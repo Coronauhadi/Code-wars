@@ -7,7 +7,7 @@ var app = new Vue({
 	this.setcoor("x"+this.pers.cor.x+"y"+this.pers.cor.y)
   },
   mounted: function() {
-    this.setcoor("x1y1")
+    this.setcoor("x"+this.pers.cor.x+"y"+this.pers.cor.y)
     // this.pers.animated.push("anim")
     window.onresize = (event) => {
      this.windowWidth = window.innerWidth;
@@ -82,8 +82,8 @@ var app = new Vue({
 	  */
 	  direction: 0,
     },
-    x: 16,
-    y: 16,
+    x: 17,
+    y: 17,
     tables: [],
     message: 'Привет, Vue!'
   },
