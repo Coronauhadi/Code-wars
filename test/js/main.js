@@ -6,7 +6,7 @@ var app = new Vue({
     this.addtables()
   },
   mounted: function() {
-    this.setcoor("x1y1")
+    this.setcoor("x"+this.pers.cor.x+"y"+this.pers.cor.y)
     // this.pers.animated.push("anim")
     window.onresize = (event) => {
      this.windowWidth = window.innerWidth;
@@ -44,11 +44,11 @@ var app = new Vue({
     windowWidth: window.innerWidth,
     pers: {
       animated: ["anim"],
-      cor:{'x': 1, 'y': 1},
+      cor:{'x': 2, 'y': 2},
       pos: {"top": "1px", "left":"1px",}
     },
-    x: 16,
-    y: 16,
+    x: 17,
+    y: 17,
     tables: [],
     message: 'Привет, Vue!'
   },
