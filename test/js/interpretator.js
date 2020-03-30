@@ -1,31 +1,61 @@
+//REQUIRES IMPLEMENTATION
+let botProgram = ''
 
-let cells = document.querySelectorAll('table#Field tr > th');
+let executeList = []
+let botExecList = parseBotProgram(botProgram)
+let userExecList = []
 
-let numberOfRows = Math.ceil(Math.sqrt(cells.length));
+/*
+	пример хеллоу ворлд:
+	а нету никакого примера хеллоу ворлд
+	
+	Программа разделяется '\n' - символами. В случае, если строчка не поддается интерпретации, программа выполнит первую из команд.
+	
+	Основные команды:
+	пвтор(x) <- следующая строчка будет повторена х раз
+	длшаг() < - делает шаг в направлении, куда смотрит персонаж
+	встрл(х,у) < - выстреливает в координату (х ; y)
+	пврот(направление) < - поворачивается в направлении. Направление может быть: 'влево' 'вправо'
+	ждать(х) < - ждёт х шагов
+*/
 
-let k = 0;
+function parseUserProgram(userProgram){	
+	//calls by an event
+	userExecList = interpretateList(userProgram.split('\n'))
+}
 
-let matrix = matrixArray(numberOfRows,numberOfRows);
-
-for(let row=0;row<numberOfRows;row++){
-	for(let header=0;header<numberOfRows;header++){
-		if(k>=cells.length)
-			break;
-		matrix[row][header] = (String(cells[k].innerText));
-		k = k+1;
-	}
+function parseBotProgram(){
+	return interpretateList(botProgram.split('\n'))
 }
 
 
-
-//https://ru.stackoverflow.com/questions/37110/Двумерные-массивыматрицы
-function matrixArray(rows,columns){
-  var arr = new Array();
-  for(var i=0; i<rows; i++){
-    arr[i] = new Array();
-    for(var j=0; j<columns; j++){
-      arr[i][j] = 0;
-    }
-  }
-  return arr;
+// TODO:
+function interpretateList(pseudoExecList){
+	for(let i=0; i < pseudoLangExecList.length; i++){
+		let command = pseudoExecList[i].substring(0,4)
+		switch (command){
+			case 'пвтор':
+			
+			let repeatCommand = pseudoExecList[i+1}.substring(0,4)
+			break;
+			
+			case 'длшаг':
+				
+			break;
+			
+			case 'встрл':
+			
+			break;
+			
+			case 'пврот':
+			
+			break;
+			
+			case 'ждать':
+			
+			break;
+			
+			default: break;
+		}
+	}
 }
