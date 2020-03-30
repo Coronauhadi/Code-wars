@@ -11,7 +11,7 @@
 	right: 6px;
 	border: solid #111 6px;
 	border-radius: 10px;
-	z-index: 999;
+	z-index: 99;
 }
 
 @font-face {
@@ -21,4 +21,10 @@ src: url(tomba2full.ttf);
 
 body{
 	background: #111;
+}
+.pers{
+	position: fixed;
+	height:4vh;
+	width:4vh;
+	z-index: 999;
 }

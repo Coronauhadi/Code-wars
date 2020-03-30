@@ -4,7 +4,12 @@ var app = new Vue({
   el: '#app',
   created: function() {
     this.addtables()
-
+  },
+  mounted: function() {
+    this.getcoor("x1y1")
+    window.onresize = (event) => {
+     this.windowWidth = window.innerWidth;
+   };
   },
   methods:{
     "addtables": function() {
@@ -25,19 +30,24 @@ var app = new Vue({
       };
 
     },
-    "getcoor": function() {
-      let b = document.getElementById('x1y1')
-
-      console.log(this.getCoords(b))
+    "getcoor": function(id) {
+      let b = document.getElementById(id)
+      let cor = this.getCoords(b)
+      this.pers.pos.top = cor.top+'px'
+      this.pers.pos.left = cor.left+'px'
+      console.log(this.pers)
     },
   },
   data: {
+    windowWidth: window.innerWidth,
     pers: {
-      pos: {}
+      cor:{'x': 1, 'y': 1},
+      pos: {"top": "1px", "left":"1px",}
     },
     x: 16,
     y: 16,
     tables: [],
     message: 'Привет, Vue!'
-  }
+  },
+
 })
