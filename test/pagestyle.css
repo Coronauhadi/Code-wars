@@ -1,17 +1,3 @@
-table#Field{
-	top: 24px;
-	right: 10px;
-	border: solid black 2px;
-	opacity: 1;
-}
-
-table#Field tr > th{
-	padding: 15px;
-	text-align: center;
-	background: black;
-	border: solid black 3px;
-}
-
 
 
 .sub{
@@ -25,6 +11,7 @@ table#Field tr > th{
 	right: 6px;
 	border: solid #111 6px;
 	border-radius: 10px;
+	z-index: 999;
 }
 
 @font-face {
