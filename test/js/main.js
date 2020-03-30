@@ -5,6 +5,12 @@ var app = new Vue({
   created: function() {
     this.addtables()
   },
+  mounted: function() {
+    this.setcoor("x1y1")
+    window.onresize = (event) => {
+     this.windowWidth = window.innerWidth;
+   };
+  },
   methods:{
     "addtables": function() {
       for (var i = 0; i < this.y; i++) {
@@ -14,24 +20,46 @@ var app = new Vue({
         }
         this.tables.push(a)
       }
-      // this.tables =
     },
     "getCoords": function(elem) {
       var box = elem.getBoundingClientRect();
-
-      return {
+      return  {
         top: box.top + pageYOffset,
         left: box.left + pageXOffset
       };
 
-    }
+    },
+    "setcoor": function(id) {
+      let cor = this.getCoords(document.getElementById(id))
+      this.pers.pos.top = cor.top+'px'
+      this.pers.pos.left = cor.left+'px'
+    },
+    "addshg": function() {
+      this.pers.cor.y++
+      this.setcoor("x"+this.pers.cor.x+"y"+this.pers.cor.y)
+    },
   },
   data: {
+    windowWidth: window.innerWidth,
+    pers: {
+      cor:{'x': 1, 'y': 1},
+      pos: {"top": "1px", "left":"1px",}
+    },
     x: 16,
     y: 16,
     tables: [],
     message: 'Привет, Vue!'
+  },
+  watch: {
+    // pers: function(val) {
+    //   console.log('asds');
+    //   this.setcoor("x"+val.x+"y"+val.y)
+    // },
+    windowWidth: function (val) {
+      this.setcoor("x"+this.pers.cor.x+"y"+this.pers.cor.y)
+    }
   }
+
 })
 
 let tcells = document.querySelectorAll("table#fields tr > th")

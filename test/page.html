@@ -21,10 +21,8 @@
 				<div class="row  ">
 
 					<div class="col-6 p-0 " style="height:100vh;">
-						<form id="CodeForm" class="h-100">
 							<textarea id="CodeInput" class="h-100 w-100 elegant-color-dark border-none text-white p-3" style="border:none"   name="text" placeholder="// поехали!"></textarea>
-							<input class="sub" type="submit" value="√">
-						</form>
+							<button type="button" class="sub" @click="addshg()" name="button">√</button>
 					</div>
 
 
@@ -45,9 +43,13 @@
 
 							<table id="fields" class="mx-auto ">
 								<tr v-for="table in tables">
-									<th v-for="th in table" class="unique-color text-white  border" style="height:4vh;width:4vh;"></th>
+									<th v-for="th in table" :id="'x'+th.x+'y'+th.y" class="unique-color text-white  border" style="height:4vh;width:4vh;"></th>
 								</tr>
 							</table>
+
+							<div class="pers" :style=pers.pos >
+								<img src="./res/sprites/characters/amazonka/amazonka_idle.png" class="w-100" alt="">
+							</div>
 
 							<div class="row ">
 								<div class="col">
