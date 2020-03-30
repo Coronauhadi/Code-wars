@@ -29,10 +29,35 @@
 
 
 					<div class="col-6 ">
-						<div class="pole">
-							<table>
-								
+						<div class="">
+
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-12 text-right">
+										<small>Уровень 1</small>
+									</div>
+									<div class="col-12 pb-2 text-center">
+										<h2>2:00</h2>
+									</div>
+
+								</div>
+							</div>
+
+							<table class="mx-auto ">
+								<tr v-for="table in tables">
+									<th v-for="th in table" class="unique-color text-white  border" style="height:4vh;width:4vh;"></th>
+								</tr>
 							</table>
+
+							<div class="row ">
+								<div class="col">
+									<hr class="mb-1 elegant-color-dark">
+									<h3>Инвентарь:</h3>
+									<ul>
+										<li>Пистолет</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 
