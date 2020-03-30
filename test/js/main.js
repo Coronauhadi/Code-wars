@@ -52,22 +52,24 @@ var app = new Vue({
 	  else{
 		  return;
 	  }
-	  
+
       this.setcoor("x"+this.pers.cor.x+"y"+this.pers.cor.y)
     },
-	"rotate": function(dir){
-		if(dir == 'left' || dir == 'l'){
-			this.pers.direction = Math.abs((this.pers.direction -1) % 4)
-		}
-		else if(dir == 'right' || dir == 'r'){
-			this.pers.direction = Math.abs((this.pers.direction +1) % 4)
-		}
-		else{
-			return;
-		}
-		this.pers.pos.transform = 'rotate(' + String(Math.round(this.pers.direction * 90)) + 'deg)'
-	},
+  	"rotate": function(dir){
+  		if(dir == 'left' || dir == 'l'){
+  			this.pers.direction = Math.abs((this.pers.direction -1) % 4)
+  		}
+  		else if(dir == 'right' || dir == 'r'){
+  			this.pers.direction = Math.abs((this.pers.direction +1) % 4)
+  		}
+  		else{
+  			return;
+  		}
+  		this.pers.pos.transform = 'rotate(' + String(Math.round(this.pers.direction * 90)) + 'deg)'
+  	},
   },
+
+
   data: {
     windowWidth: window.innerWidth,
     pers: {
@@ -85,7 +87,6 @@ var app = new Vue({
     x: 17,
     y: 17,
     tables: [],
-    message: 'Привет, Vue!'
   },
   watch: {
     // pers: function(val) {
@@ -98,4 +99,3 @@ var app = new Vue({
   }
 
 })
-

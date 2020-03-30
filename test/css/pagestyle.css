@@ -25,7 +25,7 @@ body{
 .pers{
 	position: fixed;
 	height:4vh;
-	width: 2vw;
+	width: 4vh;
 	z-index: 999;
 }
 .anim{

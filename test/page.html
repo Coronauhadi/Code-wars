@@ -25,8 +25,9 @@
 				<div class="row  ">
 
 					<div class="col-4 p-0 " style="height:100vh;">
-							<textarea id="CodeInput" class="h-100 w-100 elegant-color-dark border-none text-white p-3" style="border:none"   name="text" placeholder="// поехали!"></textarea>
-							<button type="button" class="sub" @click="addshg()" name="button">√</button>
+							<textarea id="my-textarea" class="h-100 w-100 elegant-color-dark border-none text-white p-3" style="border:none"   name="text" placeholder="// поехали!">
+							</textarea>
+							<button type="button" class="sub" @click="rotate('l')" name="button">√</button>
 					</div>
 
 
@@ -88,6 +89,15 @@
 		<script src="js/interpretator.js"></script>
 
 		<script src="./js/codemirror.js"></script>
+		<script src="./mode/javascript/javascript.js"></script>
+		<script type="text/javascript">
+		    // CodeMirror.fromTextArea(document.getElementById('my-textarea'), { mode: 'js', lineNumbers: true, theme: "moxer"})
+	      var editor = CodeMirror.fromTextArea(document.getElementById("my-textarea"), {
+	        lineNumbers: true,
+					mode: "javascript",
+	      });
+
+		</script>
 	</body>
 
 </html>
