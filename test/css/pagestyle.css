@@ -28,3 +28,6 @@ body{
 	width: 2vw;
 	z-index: 999;
 }
+.anim{
+	transition: all 0.5s ease-in-out;
+}

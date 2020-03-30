@@ -8,6 +8,7 @@ var app = new Vue({
   },
   mounted: function() {
     this.setcoor("x1y1")
+    // this.pers.animated.push("anim")
     window.onresize = (event) => {
      this.windowWidth = window.innerWidth;
    };
@@ -70,6 +71,7 @@ var app = new Vue({
   data: {
     windowWidth: window.innerWidth,
     pers: {
+      animated: ["anim"],
       cor:{'x': 1, 'y': 1},
       pos: {"top": "1px", "left":"1px", "transform": "rotate(0 deg)",},
 	  /*
