@@ -6,7 +6,7 @@ var app = new Vue({
     this.addtables()
   },
   mounted: function() {
-    this.getcoor("x1y1")
+    this.setcoor("x1y1")
     window.onresize = (event) => {
      this.windowWidth = window.innerWidth;
    };
@@ -23,19 +23,20 @@ var app = new Vue({
     },
     "getCoords": function(elem) {
       var box = elem.getBoundingClientRect();
-
       return  {
         top: box.top + pageYOffset,
         left: box.left + pageXOffset
       };
 
     },
-    "getcoor": function(id) {
-      let b = document.getElementById(id)
-      let cor = this.getCoords(b)
+    "setcoor": function(id) {
+      let cor = this.getCoords(document.getElementById(id))
       this.pers.pos.top = cor.top+'px'
       this.pers.pos.left = cor.left+'px'
-      console.log(this.pers)
+    },
+    "addshg": function() {
+      this.pers.cor.y++
+      this.setcoor("x"+this.pers.cor.x+"y"+this.pers.cor.y)
     },
   },
   data: {
@@ -49,5 +50,14 @@ var app = new Vue({
     tables: [],
     message: 'Привет, Vue!'
   },
+  watch: {
+    // pers: function(val) {
+    //   console.log('asds');
+    //   this.setcoor("x"+val.x+"y"+val.y)
+    // },
+    windowWidth: function (val) {
+      this.setcoor("x"+this.pers.cor.x+"y"+this.pers.cor.y)
+    }
+  }
 
 })
