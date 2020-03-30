@@ -70,7 +70,7 @@ var app = new Vue({
   data: {
     windowWidth: window.innerWidth,
     pers: {
-      cor:{'x': 5, 'y': 5},
+      cor:{'x': 1, 'y': 1},
       pos: {"top": "1px", "left":"1px", "transform": "rotate(0 deg)",},
 	  /*
 	  direction = 0 -> look right
