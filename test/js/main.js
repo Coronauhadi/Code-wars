@@ -33,3 +33,16 @@ var app = new Vue({
     message: 'Привет, Vue!'
   }
 })
+
+let tcells = document.querySelectorAll("table#fields tr > th")
+
+console.log(getCoords(tcells[tcells.length-1]))
+
+function getCoords(elem) {
+      var box = elem.getBoundingClientRect();
+
+      return {
+        top: box.top + pageYOffset,
+        left: box.left + pageXOffset
+	  }
+}
